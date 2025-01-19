@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Scoreboard</title>
+</head>
+<body style="background-image: url('{{ url_for('static', filename='bg.jpg') }}'); background-size: cover; background-attachment: fixed; background-repeat: no-repeat; background-size: 100% 100%; background-position: center;">
+    <div class="starfall">
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+      </div>
+    <div class="container">
+        <h1>Your Score</h1>
+        <p>You scored {{ score }} out of {{ total }}</p>
+        <h2>Incorrect Answers</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Question</th>
+                    <th>Correct Answer</th>
+                    <th>Your Answer</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for answer in incorrect_answers %}
+                    <tr>
+                        <td>{{ answer.question }}</td>
+                        <td>{{ answer.correct_answer }}</td>
+                        <td>{{ answer.your_answer }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ url_for('index') }}" class="btn">Play Again</a>
+    </div>
+</body>
+</html>

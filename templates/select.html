@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Select Course and Game</title>
+</head>
+<body style="background-image: url('{{ url_for('static', filename='bg.jpg') }}'); background-size: cover; background-attachment: fixed; background-repeat: no-repeat; background-size: 100% 100%; background-position: center;">
+    <div class="starfall">
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+      </div>
+    <div class="container">
+        <h1>Select a Course and Game</h1>
+        <form method="POST" action="{{ url_for('select') }}">
+            <div class="section">
+                <h2>Choose a Course</h2>
+                <div class="custom-select">
+                    <select name="course" required>
+                        <option value="" disabled selected>Select a course</option>
+                        <option value="Python">Python</option>
+                        <option value="HTML">HTML</option>
+                        <option value="CSS">CSS</option>
+                    </select>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Choose a Game</h2>
+                <div class="custom-select">
+                    <select name="game" required>
+                        <option value="" disabled selected>Select a game</option>
+                        <option value="pop_quiz">Pop Quiz</option>
+                        <option value="hangman">Hangman</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn">Start Game</button>
+        </form>
+        <a href="{{ url_for('index') }}" class="btn secondary">Back to Home</a>
+    </div>
+</body>
+</html>

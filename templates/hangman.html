@@ -1,0 +1,75 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+        <title>Hangman Game</title>
+    </head>
+    <body style="background-image: url('{{ url_for('static', filename='bg.jpg') }}'); background-size: cover; background-attachment: fixed; background-repeat: no-repeat; background-size: 100% 100%; background-position: center;">
+        <div class="starfall">
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+            <div class="falling-star"></div>
+        </div>
+        <div class="container">
+            <h1>Hangman Game - {{ session['hangman'].course }}</h1>
+            <img src="{{ url_for('static', filename='images/hangman' ~ session['hangman'].incorrect_attempts ~ '.png') }}" alt="Hangman">
+            <p>{{ session['hangman'].questions[session['hangman'].current_question_index]['question'] }}</p>
+            <form method="POST">
+                <input type="text" name="guess" required>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            <p>Time remaining: <span id="timer">10</span> seconds</p>
+        </div>
+        <script>
+            let timer = 10;
+            const timerElement = document.getElementById('timer');
+            const countdown = setInterval(() => {
+                timer--;
+                timerElement.textContent = timer;
+                if (timer <= 0) {
+                    clearInterval(countdown);
+                    document.forms[0].submit();
+                }
+            }, 1000);
+        </script>
+    </body>
+    </html>

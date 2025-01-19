@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Pop Quiz Game</title>
+</head>
+<body style="background-image: url('{{ url_for('static', filename='bg.jpg') }}'); background-size: cover; background-attachment: fixed; background-repeat: no-repeat; background-size: 100% 100%; background-position: center;">
+    <div class="starfall">
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+        <div class="falling-star"></div>
+      </div>
+    <div class="container">
+        <h2>Question {{ question_number }}</h2>
+        <p>{{ question['question'] }}</p>
+        <form method="POST">
+            {% for choice in question['choices'] %}
+                <div class="choice">
+                    <input type="radio" name="choice" value="{{ choice }}" id="{{ choice }}" required>
+                    <label for="{{ choice }}">{{ choice }}</label>
+                </div>
+            {% endfor %}
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
