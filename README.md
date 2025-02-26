@@ -22,8 +22,6 @@ To run this project, you need the following dependencies installed:
 
 1. **Python** (>= 3.7)  
 2. **Flask** (>= 2.0)  
-3. **Jinja2** (for templating)  
-
 You can install the required Python packages using the command:
 
 ```bash
@@ -39,17 +37,16 @@ The project is organized as follows:
 ```
 educational_games/
 |
-├── app.py                # Main Flask application
+├── app.py              
 |
-├── templates/            # HTML templates for rendering pages
-|   ├── index.html        # Home page
-|   ├── select.html       # Game selection page
-|   ├── keyword_clicker.html  # Keyword Clicker game interface
-|   └── game_over.html    # Game over screen
+├── templates/           
+|   ├── index.html       
+|   ├── select.html       
+|   └── game_over.html    
 |
-└── static/               # Static files for styles and images
-    ├── styles.css        # CSS styles for the project
-    └── bg.jpg            # Background image
+└── static/               
+    ├── styles.css        
+    └── bg.jpg           
 ```
 
 ---
