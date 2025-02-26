@@ -343,7 +343,6 @@ def hangman_score():
         incorrect_answers=hangman_score["incorrect_answers"]
     )
 
-
 if __name__ == "__main__":
     app.run(debug=True)
 
